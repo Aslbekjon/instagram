@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'instagram',
     'instagramUser',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -127,6 +128,7 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = 'media'
 MEDIA_URL = '/media/'
+LOGOUT_REDIRECT_URL = 'user_login'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
