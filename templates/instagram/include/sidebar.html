@@ -35,20 +35,19 @@
             <div class="flex justify-around w-full items-center text-center uk-link-reset text-gray-800 mt-6">
                 <div>
                     <a href="#">
-                        <strong>Post</strong>
-                        <div>{{user.post_set.count}}</div>
+                        <strong>{{user.post_set.count}} Post</strong>
                     </a>
                 </div>
                 <div>
                     <a href="#">
-                        <strong>Following</strong>
-                        <div> {{user.follower.count}}</div>
+                        <strong>{{user.following.count}} Followers</strong>
+                        
                     </a>
                 </div>
                 <div>
                     <a href="#">
-                        <strong>Followers</strong>
-                        <div> {{user.followed.count}}</div>
+                        <strong>{{user.follower.count}} Following</strong>
+                        
                     </a>
                 </div>
             </div>

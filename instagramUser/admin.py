@@ -15,5 +15,5 @@ class ProfileAdmin(admin.ModelAdmin):
             return "Rasm joylanmagan"
     get_pthoto.short_description = "Rasmi"
 
-admin.site.register(Profile,ProfileAdmin)
+admin.site.register(Profile)
 admin.site.register(Following)

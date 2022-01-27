@@ -2,4 +2,16 @@
 
 {% block content %}
  Salom {{user.username}}
+{{post_items.count}}
+ {% for item in post_items %}
+ kol
+    <img style="width: 200px;" src="{{ item.img.url}}" alt="">
+    <p>{{item.title}}</p>
+    <h3>{{item.profile.username}}</h3>
+    <h4>{{item.location}}</h4>
+    <p>{{item.created_at}}</p>
+    <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+    <hr>
+    <hr>
+ {% endfor %}
 {% endblock %}
