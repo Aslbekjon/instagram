@@ -1,0 +1,14 @@
+{% load static %}
+{% for com in comments %}
+    <div class="flex flex-1 items-center space-x-2">
+        {% if com.profile.img %}                                            
+        <img src="{{com.profile.img.url}}" class="rounded-full w-6 h-6">
+        {% else %}                                            
+        <img src="{% static 'images/people.jpg' %}" class="rounded-full w-6 h-6">
+        {% endif %}
+        <div class="flex-1 p-0">
+            <p><a href="{% url 'profile' com.profile.username %}" style="font-weight: bold;font-size: 14px;color: rgb(59, 53, 46);font-family: 'Times New Roman', Times, serif;padding-right: 10px;">{{com.profile.username}} </a> {{com.text}}</p>
+            <p style="font-size: 14px;">{{com.created_at|date}} <a href="#" style="color: dimgrey;">{% if com.profile.username != user.username  %}<u>javob berish</u>{% endif %}</a></p>
+        </div>
+    </div>
+{% endfor %}

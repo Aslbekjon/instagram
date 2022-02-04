@@ -2823,7 +2823,9 @@ header .uk-dropdown {
 }
 
 .story-modal .story-modal-media {
-  max-width: 660px;
+  min-width: 500px;
+  max-width: 500px;
+  max-height: 556px;
 }
 
 .story-modal .story-content {
@@ -2840,6 +2842,7 @@ header .uk-dropdown {
     width: 100% !important;
   }
   .story-modal .story-modal-media {
+    min-width: 100%;
     max-width: 660px;
     min-height: 420px;
     position: relative;

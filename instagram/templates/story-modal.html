@@ -1,0 +1,92 @@
+{% load static %}
+<div class="uk-modal-dialog story-modal">
+    <button class="uk-modal-close-default lg:-mt-9 lg:-mr-9 -mt-5 -mr-5 shadow-lg bg-white rounded-full p-4 transition dark:bg-gray-600 dark:text-white" type="button" uk-close></button>
+
+        <div class="story-modal-media">
+            <img src="{{post.img.url}}" class="inset-0 h-full w-full rasm">
+        </div>
+        <div class="flex-1 bg-white dark:bg-gray-900 dark:text-gray-100">
+        
+            <!-- post header-->
+            <div class="border-b flex items-center justify-between px-5 py-3 dark:border-gray-600">
+                <div class="flex flex-1 items-center space-x-4">
+                    <a href="#">
+                        <div class="bg-gradient-to-tr from-yellow-600 to-pink-600 p-0.5 rounded-full">
+                            {% if post.profile.img %}
+                                <img src="{{post.profile.img.url}}"
+                                    class="bg-gray-200 border border-white rounded-full w-8 h-8">
+                            {% else %}
+                                <img src="{% static 'images/people.jpg' %}"
+                                    class="bg-gray-200 border border-white rounded-full w-8 h-8">
+                            {% endif %}
+                        </div>
+                    </a>
+                    <span class="block text-lg font-semibold"> {{post.profile.username}} </span>
+                </div>
+                <a href="#"> 
+                    <i  class="icon-feather-more-horizontal text-2xl rounded-full p-2 transition -mr-1"></i>
+                </a>
+            </div>
+            <div class="story-content p-4" data-simplebar>
+
+                <p> {{post.title}} </p>
+                
+                <div class="py-4 ">
+                    <div class="flex justify-around">
+                        <div id="likelar">
+                            <!-- like.html -->
+                        </div>
+                        
+                        <a href="#comment" class="flex items-center space-x-3">
+                            <div class="flex font-bold items-baseline"> <i class="uil-heart mr-1"> </i> Comment</div>
+                        </a>
+                        <a href="#" class="flex items-center space-x-3">
+                            <div class="flex font-bold items-baseline"> <i class="uil-heart mr-1"> </i> Share</div>
+                        </a>
+                    </div>
+                    <hr class="-mx-4 my-3">
+                    <div class="flex items-center space-x-3"> 
+                        <div class="flex items-center">
+                            {% if rasm1 != 0 and rasm1.user.img %}
+                                <img src="{{rasm1.user.img.url}}" alt="" class="w-6 h-6 rounded-full border-2 border-white">
+                            {% else %}
+                                <img src="{% static 'images/people.jpg' %}" alt="" class="w-6 h-6 rounded-full border-2 border-white">
+                            {% endif %}
+                            {% if rasm2 != 0 and rasm2.user.img %}
+                                <img src="{{rasm2.user.img.url}}" alt="" class="w-6 h-6 rounded-full border-2 border-white -ml-2">
+                            {% else %}
+                                <img src="{% static 'images/people.jpg' %}" alt="" class="w-6 h-6 rounded-full border-2 border-white -ml-2">
+                            {% endif %}
+                            {% if rasm3 != 0 and rasm3.user.img %}
+                                <img src="{{rasm3.user.img.url}}" alt="" class="w-6 h-6 rounded-full border-2 border-white -ml-2">
+                            {% else %}
+                                <img src="{% static 'images/people.jpg' %}" alt="" class="w-6 h-6 rounded-full border-2 border-white -ml-2">
+                            {% endif %}
+                        </div>
+                        <div>
+                            Liked <strong> Johnson</strong> and <strong> 209 Others </strong>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="-mt-1 space-y-1" id="commentlist">
+                <!-- commentlist -->
+            </div>
+
+
+            </div>
+            <div class="p-3 border-t dark:border-gray-600">
+                <div class="bg-gray-200 dark:bg-gray-700 rounded-full rounded-md relative">
+                    <input type="text" name="comment" id="comment" placeholder="Add your Comment.." class="bg-transparent max-h-8 shadow-none">
+                    
+                    <div class="absolute bottom-0 flex h-full items-center right-0 right-3 text-xl space-x-2">
+                        <button  type="button" name="{{post.id}}" onClick="comment(this.name)"><i class="uil-telegram mr-1"></i></button>
+                        <a href="#"> <i class="uil-image"></i></a>
+                        <a href="#"> <i class="uil-video"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+</div>
